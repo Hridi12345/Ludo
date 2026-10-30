@@ -695,7 +695,29 @@ body {
     box-shadow: var(--shadow-soft);
     position: relative;
     overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.dice-dashboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--red-gradient);
+    transition: background 0.3s ease;
+}
+
+.dice-dashboard.red::before { background: var(--red-gradient); }
+.dice-dashboard.green::before { background: var(--green-gradient); }
+.dice-dashboard.yellow::before { background: var(--yellow-gradient); }
+.dice-dashboard.blue::before { background: var(--blue-gradient); }
+
+.dice-dashboard.red { border-color: rgba(255, 71, 87, 0.3); }
+.dice-dashboard.green { border-color: rgba(46, 213, 115, 0.3); }
+.dice-dashboard.yellow { border-color: rgba(255, 165, 2, 0.3); }
+.dice-dashboard.blue { border-color: rgba(30, 144, 255, 0.3); }
 
 .turn-message-box {
     display: flex;
